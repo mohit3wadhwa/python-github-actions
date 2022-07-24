@@ -39,3 +39,5 @@
 2022-07-24 17:17:53,646 - __main__ - INFO - Token Not Found!
 2022-07-24 17:19:29,076 - __main__ - INFO - Token value: Token not available!
 2022-07-24 17:19:30,513 - __main__ - INFO - Weather in Delhi: 33.05
+2022-07-24 18:32:09,100 - __main__ - INFO - Token value: Token not available!
+2022-07-24 18:32:10,670 - __main__ - INFO - Weather in Delhi: 31.05
