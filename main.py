@@ -4,6 +4,8 @@ import os
 
 import requests
 
+from discord import Webhook, RequestsWebhookAdapter
+
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
 logger_file_handler = logging.handlers.RotatingFileHandler(
@@ -23,6 +25,13 @@ except KeyError:
     #logger.info("Token not available!")
     #raise
 
+def get_token():
+    try:
+        TOKEN = os.environ["TOKEN"]
+        return TOKEN
+    except KeyError:
+        return None
+
 
 if __name__ == "__main__":
     logger.info(f"Token value: {SOME_SECRET}")
@@ -31,4 +40,11 @@ if __name__ == "__main__":
     if r.status_code == 200:
         data = r.json()
         temperature = data["forecast"]["temp"]
-        logger.info(f'Weather in Delhi: {temperature}')
+        TOKEN=get_token()
+        if TOKEN:
+            webhook = Webhook.from_url(f'https://discord.com/api/webhooks/1000714163875754004/{TOKEN}', adapter=RequestsWebhookAdapter())
+            webhook.send(f'🚀 Weather in Delhi 🚀: {temperature}')
+            logger.info(f'Weather in Delhi: {temperature}')
+        else:
+            logger.info(f'Token Not Found!')
+            
