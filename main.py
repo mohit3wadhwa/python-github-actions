@@ -27,8 +27,8 @@ except KeyError:
 
 def get_token():
     try:
-        TOKEN = os.environ["TOKEN"]
-        return TOKEN
+        TOKEN_K = os.environ["TOKEN_KEY"]
+        return TOKEN_K
     except KeyError:
         return None
 
@@ -40,9 +40,9 @@ if __name__ == "__main__":
     if r.status_code == 200:
         data = r.json()
         temperature = data["forecast"]["temp"]
-        TOKEN=get_token()
-        if TOKEN:
-            webhook = Webhook.from_url(f'https://discord.com/api/webhooks/1000714163875754004/{TOKEN}', adapter=RequestsWebhookAdapter())
+        TOKEN_K=get_token()
+        if TOKEN_K:
+            webhook = Webhook.from_url(f'https://discord.com/api/webhooks/1000714163875754004/{TOKEN_K}', adapter=RequestsWebhookAdapter())
             webhook.send(f'🚀 Weather in Delhi 🚀: {temperature}')
             logger.info(f'Weather in Delhi: {temperature}')
         else:
