@@ -208,3 +208,5 @@
 2022-07-26 09:58:25,137 - __main__ - INFO - Weather in Delhi: 30.05
 2022-07-26 10:31:32,086 - __main__ - INFO - Token value: From Github Action
 2022-07-26 10:31:32,651 - __main__ - INFO - Weather in Delhi: 29.05
+2022-07-26 10:50:00,763 - __main__ - INFO - Token value: From Github Action
+2022-07-26 10:50:01,045 - __main__ - INFO - Weather in Delhi: 30.05
