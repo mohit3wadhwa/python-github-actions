@@ -42,8 +42,8 @@ if __name__ == "__main__":
         temperature = data["forecast"]["temp"]
         TOKEN_K=get_token()
         if TOKEN_K:
-            webhook = Webhook.from_url(f'https://discord.com/api/webhooks/1000714163875754004/{TOKEN_K}', adapter=RequestsWebhookAdapter())
-            webhook.send(f'🚀 Weather in Delhi 🚀: {temperature}')
+            #webhook = Webhook.from_url(f'https://discord.com/api/webhooks/1000714163875754004/{TOKEN_K}', adapter=RequestsWebhookAdapter())
+            #webhook.send(f'🚀 Weather in Delhi 🚀: {temperature}')
             logger.info(f'Weather in Delhi: {temperature}')
         else:
             logger.info(f'Token Not Found!')
